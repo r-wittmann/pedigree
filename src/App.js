@@ -1,13 +1,29 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import SearchBar from "./components/SearchBar";
 
-function App() {
-  return (
-    <div className="App">
-      Test
-        <Button>Test</Button>
-    </div>
-  );
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchTerm: "",
+        };
+        this.onSearchTermChange = this.onSearchTermChange.bind(this);
+    }
+
+    onSearchTermChange = (searchTerm) => {
+        console.log(searchTerm);
+        this.setState({
+            searchTerm
+        });
+    };
+
+    render() {
+        return (
+            <div>
+                <SearchBar searchTerm={this.state.searchTerm} onChange={this.onSearchTermChange}/>
+            </div>
+        );
+    }
 }
 
 export default App;
