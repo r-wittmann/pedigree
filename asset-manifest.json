@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pedigree/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/pedigree/static/js/main.b9a0f76e.chunk.js",
+    "main.js.map": "/pedigree/static/js/main.b9a0f76e.chunk.js.map",
+    "runtime-main.js": "/pedigree/static/js/runtime-main.9b0ace77.js",
+    "runtime-main.js.map": "/pedigree/static/js/runtime-main.9b0ace77.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/pedigree/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.55e218dd.chunk.js": "/pedigree/static/js/2.55e218dd.chunk.js",
+    "static/js/2.55e218dd.chunk.js.map": "/pedigree/static/js/2.55e218dd.chunk.js.map",
+    "index.html": "/pedigree/index.html",
+    "precache-manifest.d1419ec30f90a6650ee20aa73f3a8e7b.js": "/pedigree/precache-manifest.d1419ec30f90a6650ee20aa73f3a8e7b.js",
+    "service-worker.js": "/pedigree/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/pedigree/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/pedigree/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.55e218dd.chunk.js.LICENSE": "/pedigree/static/js/2.55e218dd.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9b0ace77.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.55e218dd.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.b9a0f76e.chunk.js"
+  ]
+}
