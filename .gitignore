@@ -8,6 +8,7 @@
 
 # User-specific stuff
 .idea
+build
 
 # CMake
 cmake-build-*/
