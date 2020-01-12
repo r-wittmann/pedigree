@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f48ff6ed3e8d35edcc87c2ac69048b87",
+    "revision": "4d8fecc1d397ecdf8367105fdba9236e",
     "url": "/pedigree/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pedigree/static/css/2.47e06e2e.chunk.css"
   },
   {
-    "revision": "a804b7a23d363c1696f4",
+    "revision": "63e8cef93efaea8d176d",
     "url": "/pedigree/static/css/main.f3f35b4b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pedigree/static/js/2.bdd7851b.chunk.js.LICENSE"
   },
   {
-    "revision": "a804b7a23d363c1696f4",
-    "url": "/pedigree/static/js/main.e9d4d842.chunk.js"
+    "revision": "63e8cef93efaea8d176d",
+    "url": "/pedigree/static/js/main.cb6aa1db.chunk.js"
   },
   {
     "revision": "65298e686372c1bd77bd",
