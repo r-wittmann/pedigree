@@ -53,7 +53,7 @@ class App extends React.Component {
                     <PersonInfoDisplay person={this.state.selectedPerson}/>
                     }
                     {Object.keys(this.state.selectedPerson).length > 0 &&
-                    <Pedigree selectedPerson={this.state.selectedPerson}/>
+                    <Pedigree selectedPerson={this.state.selectedPerson} onClick={this.onSuggestionClick}/>
                     }
                 </div>
                 <Footer />

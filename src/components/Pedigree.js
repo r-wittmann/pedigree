@@ -27,7 +27,7 @@ class Pedigree extends React.Component {
             <div key={this.props.selectedPerson.personId}>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.parents.map(parent =>
-                        <PedigreePersonDisplay key={parent.personId} person={parent}/>
+                        <PedigreePersonDisplay key={parent.personId} person={parent} onClick={this.props.onClick}/>
                     )}
                     {
                         this.state.parents.map(parent =>
@@ -36,11 +36,11 @@ class Pedigree extends React.Component {
                     }
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
-                    <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson} highlight/>
+                    <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson} center/>
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.children.map(child =>
-                        <PedigreeChildDisplay key={child.personId} person={child}/>
+                        <PedigreeChildDisplay key={child.personId} person={child} onClick={this.props.onClick}/>
                     )}
                     {
                         this.state.children.map(child =>

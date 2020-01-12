@@ -10,9 +10,12 @@ class PedigreePersonDisplay extends React.Component {
                         display: "inline-block",
                         padding: 5,
                         margin: 5,
-                        border: this.props.highlight ? "2px solid #acacac" : "1px solid #acacac",
+                        border: this.props.center ? "2px solid #acacac" : "1px solid #acacac",
+                        cursor: this.props.center ? "" : "pointer",
                         borderRadius: 4
-                    }}>
+                    }}
+                    onClick={(() => this.props.onClick(this.props.person))}
+                >
                     <div>
                         <span>{this.props.person.firstName} </span>
                         <span>{this.props.person.lastName}</span>

@@ -21,7 +21,7 @@ class PedigreeChildDisplay extends React.Component {
     render() {
         return (
             <div style={{flexGrow: 1, textAlign: "center"}}>
-                <PedigreePersonDisplay person={this.props.person}/>
+                <PedigreePersonDisplay person={this.props.person} onClick={this.props.onClick}/>
                 {this.state.children.length > 0 &&
                 <div style={{textAlign: "center"}}>
                     {this.state.children.length === 1 ?
