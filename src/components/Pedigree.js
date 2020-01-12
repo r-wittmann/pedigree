@@ -2,6 +2,7 @@ import React from "react";
 import {findParents, findChildren} from "../services/buildPedigree";
 import PedigreePersonDisplay from "./PedigreePersonDisplay";
 import ConnectingLine from "./ConnectingLine";
+import PedigreeChildDisplay from "./PedigreeChildDisplay";
 
 class Pedigree extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class Pedigree extends React.Component {
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.children.map(child =>
-                        <PedigreePersonDisplay key={child.personId} person={child}/>
+                        <PedigreeChildDisplay key={child.personId} person={child}/>
                     )}
                     {
                         this.state.children.map(child =>
