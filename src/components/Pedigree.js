@@ -1,6 +1,7 @@
 import React from "react";
 import {findParents, findChildren} from "../services/buildPedigree";
 import PedigreePersonDisplay from "./PedigreePersonDisplay";
+import ConnectingLine from "./ConnectingLine";
 
 class Pedigree extends React.Component {
     constructor(props) {
@@ -25,10 +26,12 @@ class Pedigree extends React.Component {
             <div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.parents.map(parent =>
-                        <PedigreePersonDisplay id={parent.personId} key={parent.personId} person={parent}/>
+                        <PedigreePersonDisplay key={parent.personId} person={parent}/>
                     )}
                     {
-                        // this.state.parents.map(parent => connection lines...)
+                        this.state.parents.map(parent =>
+                            <ConnectingLine key={parent.personId} from={parent.personId} to={this.props.selectedPerson.personId}/>
+                        )
                     }
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
@@ -36,10 +39,12 @@ class Pedigree extends React.Component {
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.children.map(child =>
-                        <PedigreePersonDisplay id={child.personId} key={child.personId} person={child}/>
+                        <PedigreePersonDisplay key={child.personId} person={child}/>
                     )}
                     {
-                        // this.state.children.map(child => connection lines...)
+                        this.state.children.map(child =>
+                            <ConnectingLine key={child.personId} from={this.props.selectedPerson.personId} to={child.personId}/>
+                        )
                     }
                 </div>
             </div>

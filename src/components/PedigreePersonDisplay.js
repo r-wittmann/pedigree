@@ -10,7 +10,7 @@ class PedigreePersonDisplay extends React.Component {
                         display: "inline-block",
                         padding: 5,
                         margin: 5,
-                        border: this.props.highlight ? "2px solid #acacac" : "1px solid #cacaca",
+                        border: this.props.highlight ? "2px solid #acacac" : "1px solid #acacac",
                         borderRadius: 4
                     }}>
                     <div>
