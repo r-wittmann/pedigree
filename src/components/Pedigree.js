@@ -23,7 +23,7 @@ class Pedigree extends React.Component {
 
     render() {
         return (
-            <div>
+            <div key={this.props.selectedPerson.personId}>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.parents.map(parent =>
                         <PedigreePersonDisplay key={parent.personId} person={parent}/>
