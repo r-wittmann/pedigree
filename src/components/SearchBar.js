@@ -1,5 +1,6 @@
 import React from "react";
 import {FormGroup, FormControl} from "react-bootstrap";
+import Suggestions from "./Suggestions";
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -12,17 +13,30 @@ class SearchBar extends React.Component {
         event.preventDefault();
     };
 
+    handleSuggestionClick = (event, personData) => {
+        this.props.onSuggestionClick(personData);
+        event.preventDefault();
+    };
+
     render() {
         return (
-            <div style={{padding: 10}}>
-                <FormGroup>
-                    <FormControl
-                        type="test"
-                        placeholder="Search for a last name..."
-                        value={this.props.searchTerm}
-                        onChange={this.handleChange}
-                    />
-                </FormGroup>
+            <div style={{backgroundColor: "#8B2332"}}>
+                <div style={{display: "flex"}}>
+                    <h2 style={{padding: 10, marginBottom: 0, color: "white", width: 271}}>MIS GENEALOGY</h2>
+                    <div style={{flexGrow: 1}}>
+                        <FormGroup style={{padding: 10, marginBottom: 0}}>
+                            <FormControl
+                                type="test"
+                                placeholder="Search for a last name..."
+                                value={this.props.searchTerm}
+                                onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        {!!this.props.suggestions.length &&
+                        <Suggestions suggestions={this.props.suggestions} onClick={this.handleSuggestionClick}/>
+                        }
+                    </div>
+                </div>
             </div>
         )
     }
