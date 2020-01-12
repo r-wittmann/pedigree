@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
         return (
             <div style={{backgroundColor: "#8B2332", position: "fixed", width: "100vw"}}>
                 <div style={{display: "flex"}}>
-                    <h2 style={{padding: 10, marginBottom: 0, color: "white", width: 271}}>MIS GENEALOGY</h2>
+                    <h2 style={{padding: 10, marginBottom: 0, color: "white"}}>MIS GENEALOGY</h2>
                     <div style={{flexGrow: 1}}>
                         <FormGroup style={{padding: 10, marginBottom: 0}}>
                             <FormControl
