@@ -1,6 +1,9 @@
 import React from 'react';
 import SearchBar from "./components/SearchBar";
 import {fuzzySearch} from "./services/fuzzySearch"
+import PersonInfoDisplay from "./components/PersonInfoDisplay";
+import Pedigree from "./components/Pedigree";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
     constructor(props) {
@@ -45,22 +48,15 @@ class App extends React.Component {
                     onChange={this.onSearchTermChange}
                     onSuggestionClick={this.onSuggestionClick}
                 />
-                {Object.keys(this.state.selectedPerson).length > 0 &&
-                <div>
-                    <div>
-                        <span>{this.state.selectedPerson.firstName} </span>
-                        <span>{this.state.selectedPerson.lastName}</span>
-                    </div>
-                    <div>
-                        <span>{this.state.selectedPerson.dissertationTitle}, </span>
-                        <span>{this.state.selectedPerson.dissertationYear}</span>
-                    </div>
-                    <div>
-                        <span>{this.state.selectedPerson.schoolName}, </span>
-                        <span>{this.state.selectedPerson.region}</span>
-                    </div>
+                <div style={{paddingTop: 58, marginBottom: 58}}>
+                    {Object.keys(this.state.selectedPerson).length > 0 &&
+                    <PersonInfoDisplay person={this.state.selectedPerson}/>
+                    }
+                    {Object.keys(this.state.selectedPerson).length > 0 &&
+                    <Pedigree selectedPerson={this.state.selectedPerson}/>
+                    }
                 </div>
-                }
+                <Footer />
             </div>
         );
     }
