@@ -1,8 +1,6 @@
 import React from 'react';
 import SearchBar from "./components/SearchBar";
-import Fuse from "fuse.js";
-
-const personData = require("./data/person_data");
+import {fuzzySearch} from "./services/fuzzySearch"
 
 class App extends React.Component {
     constructor(props) {
@@ -19,30 +17,27 @@ class App extends React.Component {
             searchTerm
         });
 
-        if (searchTerm.length < 3) return;
-
-        let options = {
-            shouldSort: true,
-            threshold: 0.2,
-            location: 0,
-            distance: 5,
-            maxPatternLength: 32,
-            minMatchCharLength: 3,
-        };
+        if (searchTerm.length < 3) {
+            this.setState({
+                autocompleteSuggestions: {
+                    firstNameResult: [],
+                    lastNameResult: [],
+                    dissertationTitleResult: [],
+                },
+            });
+            return;
+        }
 
         let resultObject = {
-            firstNameResult: this.fuseSearch(searchTerm, options, ["fistName"]),
-            lastNameResult: this.fuseSearch(searchTerm, options, ["lastName"]),
-            dissertationTitleResult: this.fuseSearch(searchTerm, options, ["dissertationTitle"]),
+            firstNameResult: fuzzySearch(searchTerm, ["firstName"]),
+            lastNameResult: fuzzySearch(searchTerm, ["lastName"]),
+            dissertationTitleResult: fuzzySearch(searchTerm, ["dissertationTitle"]),
         };
 
-        console.log(resultObject);
+        this.setState({
+            autocompleteSuggestions: resultObject,
+        })
 
-    };
-
-    fuseSearch = (searchTerm, options, keys) => {
-        let fuse = new Fuse(personData, Object.assign({}, options, {keys}));
-        return fuse.search(searchTerm, {limit: 10});
     };
 
     render() {
