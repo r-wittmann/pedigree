@@ -3,14 +3,18 @@ import React from "react";
 class PersonInfoDisplay extends React.Component {
     render() {
         return (
-            <div>
+            <div style={{marginLeft: "10vw", marginRight: "10vw", padding: 10}}>
                 <div>
-                    <span>{this.props.person.firstName} </span>
-                    <span>{this.props.person.lastName}</span>
+                    <h3>
+                        <span>{this.props.person.firstName} </span>
+                        <span>{this.props.person.lastName}</span>
+                    </h3>
                 </div>
                 <div>
-                    <span>{this.props.person.dissertationTitle}, </span>
-                    <span>{this.props.person.dissertationYear}</span>
+                    <b>
+                        <span>{this.props.person.dissertationTitle}, </span>
+                        <span>{this.props.person.dissertationYear}</span>
+                    </b>
                 </div>
                 <div>
                     <span>{this.props.person.schoolName}, </span>

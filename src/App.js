@@ -32,11 +32,15 @@ class App extends React.Component {
     };
 
     onSuggestionClick = (person) => {
-        this.setState({
-            searchTerm: "",
-            autocompleteSuggestions: [],
-            selectedPerson: person,
-        })
+        if (person.personId !== 10000) {
+            this.setState({
+                searchTerm: "",
+                autocompleteSuggestions: [],
+                selectedPerson: person,
+            })
+        } else {
+            window.alert("This person can't be selected");
+        }
     };
 
     render() {

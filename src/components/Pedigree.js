@@ -36,7 +36,7 @@ class Pedigree extends React.Component {
                     }
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
-                    <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson} center/>
+                    <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson} center onClick={() => {}}/>
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.children.map(child =>

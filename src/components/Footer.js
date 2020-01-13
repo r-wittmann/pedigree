@@ -14,7 +14,9 @@ class Footer extends React.Component {
                 alignItems: "center",
                 justifyContent: "center",
             }}>
-                <h2>Footer</h2>
+                <div style={{display: "flex", marginLeft: "10vw", marginRight: "10vw"}}>
+                    <h2>Footer</h2>
+                </div>
             </div>
         )
     }

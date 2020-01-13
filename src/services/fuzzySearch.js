@@ -13,6 +13,6 @@ const options = {
 
 export function fuzzySearch(searchTerm, keys) {
     let fuse = new Fuse(personData, Object.assign({}, options, {keys}));
-    let result = fuse.search(searchTerm, {limit: 5});
+    let result = fuse.search(searchTerm, {limit: 15});
     return result;
 }

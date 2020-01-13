@@ -11,7 +11,7 @@ class Suggestions extends React.Component {
                 marginRight: 10,
                 border: "1px solid #cacaca",
                 borderRadius: 4,
-                width: "calc(100vw - 291px",
+                width: "calc(80vw - 291px)",
                 backgroundColor: "white"
             }}>
                 <div style={{padding: 5}}>
