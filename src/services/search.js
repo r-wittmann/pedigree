@@ -1,4 +1,5 @@
 import Fuse from "fuse.js";
+
 const personData = require("../data/person_data");
 
 const options = {
@@ -13,6 +14,9 @@ const options = {
 
 export function fuzzySearch(searchTerm, keys) {
     let fuse = new Fuse(personData, Object.assign({}, options, {keys}));
-    let result = fuse.search(searchTerm, {limit: 15});
-    return result;
+    return fuse.search(searchTerm, {limit: 15});
+}
+
+export function searchById(personId) {
+    return personData.find(person => person.personId == personId);
 }

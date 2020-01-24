@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from "./components/SearchBar";
-import {fuzzySearch} from "./services/fuzzySearch"
+import {fuzzySearch, searchById} from "./services/search"
 import PersonInfoDisplay from "./components/PersonInfoDisplay";
 import Pedigree from "./components/Pedigree";
 import Footer from "./components/Footer";
@@ -15,6 +15,18 @@ class App extends React.Component {
         };
         this.onSearchTermChange = this.onSearchTermChange.bind(this);
         this.onSuggestionClick = this.onSuggestionClick.bind(this);
+        this.onHashChange = this.onHashChange.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener("hashchange", (event) => this.onHashChange(event.target.location.hash.substr(1)), false);
+        if(window.location.hash) {
+            this.onHashChange(window.location.hash.substr(1))
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("hashchange", (event) => this.onHashChange(event.target.location.hash.substr(1)), false);
     }
 
     onSearchTermChange = (searchTerm) => {
@@ -37,9 +49,20 @@ class App extends React.Component {
                 searchTerm: "",
                 autocompleteSuggestions: [],
                 selectedPerson: person,
-            })
+            });
+            window.location.hash = person.personId;
         } else {
             window.alert("This person can't be selected");
+        }
+    };
+
+    onHashChange = (hash) => {
+        if (hash && hash != this.state.selectedPerson.personId) {
+            this.setState({
+                searchTerm: "",
+                autocompleteSuggestions: [],
+                selectedPerson: searchById(hash)
+            });
         }
     };
 
