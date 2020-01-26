@@ -32,7 +32,15 @@ class ConnectingLine extends React.Component {
 
     render(){
         return (
-            <svg style={{position: "absolute", top: 0, left: 0, width: "100vw", height: "calc(100vh - 58px", pointerEvents: "none"}}>
+            <svg style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "calc(100vh - 58px",
+                pointerEvents: "none",
+                zIndex: -1
+            }}>
                 <line
                     x1={this.state.fromX}
                     y1={this.state.fromY}

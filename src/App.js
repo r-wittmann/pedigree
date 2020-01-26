@@ -45,11 +45,6 @@ class App extends React.Component {
 
     onSuggestionClick = (person) => {
         if (person.personId !== 10000) {
-            this.setState({
-                searchTerm: "",
-                autocompleteSuggestions: [],
-                selectedPerson: person,
-            });
             window.location.hash = person.personId;
         } else {
             window.alert("This person can't be selected");

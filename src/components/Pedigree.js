@@ -27,26 +27,25 @@ class Pedigree extends React.Component {
             <div key={this.props.selectedPerson.personId}>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.parents.map(parent =>
-                        <PedigreePersonDisplay key={parent.personId} person={parent} onClick={this.props.onClick}/>
+                        <>
+                            <PedigreePersonDisplay key={parent.personId} person={parent} onClick={this.props.onClick}/>
+                            <ConnectingLine key={parent.personId + parent.firstName} from={parent.personId}
+                                            to={this.props.selectedPerson.personId}/>
+                        </>
                     )}
-                    {
-                        this.state.parents.map(parent =>
-                            <ConnectingLine key={parent.personId} from={parent.personId} to={this.props.selectedPerson.personId}/>
-                        )
-                    }
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson} center onClick={() => {}}/>
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.children.map(child =>
-                        <PedigreeChildDisplay key={child.personId} person={child} onClick={this.props.onClick}/>
+                        <>
+                            <PedigreeChildDisplay key={child.personId} person={child} onClick={this.props.onClick}/>
+                            <ConnectingLine key={child.personId + child.firstName}
+                                            from={this.props.selectedPerson.personId}
+                                            to={child.personId}/>
+                        </>
                     )}
-                    {
-                        this.state.children.map(child =>
-                            <ConnectingLine key={child.personId} from={this.props.selectedPerson.personId} to={child.personId}/>
-                        )
-                    }
                 </div>
             </div>
         )
