@@ -20,7 +20,7 @@ class App extends React.Component {
 
     componentDidMount() {
         window.addEventListener("hashchange", (event) => this.onHashChange(event.target.location.hash.substr(1)), false);
-        if(window.location.hash) {
+        if (window.location.hash) {
             this.onHashChange(window.location.hash.substr(1))
         }
     }
@@ -78,7 +78,7 @@ class App extends React.Component {
                     <Pedigree selectedPerson={this.state.selectedPerson} onClick={this.onSuggestionClick}/>
                     }
                 </div>
-                <Footer />
+                <Footer/>
             </div>
         );
     }

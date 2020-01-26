@@ -1,5 +1,5 @@
 import React from "react";
-import {findParents, findChildren} from "../services/buildPedigree";
+import {findChildren, findParents} from "../services/buildPedigree";
 import PedigreePersonDisplay from "./PedigreePersonDisplay";
 import ConnectingLine from "./ConnectingLine";
 import PedigreeChildDisplay from "./PedigreeChildDisplay";
@@ -14,7 +14,7 @@ class Pedigree extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps !== this.props){
+        if (prevProps !== this.props) {
             this.setState({
                 parents: findParents(this.props.selectedPerson),
                 children: findChildren(this.props.selectedPerson),
@@ -35,7 +35,8 @@ class Pedigree extends React.Component {
                     )}
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
-                    <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson} center onClick={() => {}}/>
+                    <PedigreePersonDisplay id={this.props.selectedPerson.personId} person={this.props.selectedPerson}
+                                           center onClick={() => {}}/>
                 </div>
                 <div style={{display: "flex", padding: "25px 10px"}}>
                     {this.state.children.map(child =>

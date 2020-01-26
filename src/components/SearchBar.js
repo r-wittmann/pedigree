@@ -1,5 +1,5 @@
 import React from "react";
-import {FormGroup, FormControl} from "react-bootstrap";
+import {FormControl, FormGroup} from "react-bootstrap";
 import Suggestions from "./Suggestions";
 
 class SearchBar extends React.Component {

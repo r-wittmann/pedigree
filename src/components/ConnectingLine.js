@@ -30,7 +30,7 @@ class ConnectingLine extends React.Component {
         })
     };
 
-    render(){
+    render() {
         return (
             <svg style={{
                 position: "absolute",
@@ -46,7 +46,7 @@ class ConnectingLine extends React.Component {
                     y1={this.state.fromY}
                     x2={this.state.toX}
                     y2={this.state.toY}
-                    style={{stroke: "#acacac", strokeWidth:1}} />
+                    style={{stroke: "#acacac", strokeWidth: 1}}/>
             </svg>
         )
     }

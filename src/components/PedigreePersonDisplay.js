@@ -7,6 +7,7 @@ class PedigreePersonDisplay extends React.Component {
             hover: false,
         }
     }
+
     render() {
         return (
             <div style={{flexGrow: 1, textAlign: "center"}}>
